@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocket Marathon Coach</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🏃 Pocket Marathon Coach</h1>
+    <button id="installBtn" class="secondary">Install App</button>
+  </header>
+
+  <section class="card">
+    <h2>Plan Settings</h2>
+    <div class="grid">
+      <label>Race date
+        <input type="date" id="raceDate">
+      </label>
+      <label>Base weekly km
+        <input type="number" id="baseKm" min="10" max="120" value="35">
+      </label>
+      <label>Peak weekly km
+        <input type="number" id="peakKm" min="20" max="140" value="60">
+      </label>
+      <label>Runs per week
+        <select id="runsPerWeek">
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label>Long run peak (km)
+        <input type="number" id="longRunPeak" min="18" max="36" value="30">
+      </label>
+      <label>Cutback every 3rd week
+        <select id="cutback">
+          <option value="true" selected>Yes</option>
+          <option value="false">No</option>
+        </select>
+      </label>
+    </div>
+    <div class="actions">
+      <button id="generateBtn">Generate Plan</button>
+      <button id="saveBtn" class="secondary">Save</button>
+      <button id="exportIcsBtn" class="secondary">Export .ics</button>
+      <button id="clearBtn" class="danger">Clear</button>
+    </div>
+    <p class="muted">Tip: tap <em>Edit</em> to change a planned day, or <em>Log</em> to record what you actually ran.</p>
+  </section>
+
+  <section id="plan"></section>
+
+  <footer>
+    <p>Made for your Pixel — install to home screen for offline use. ✨</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
